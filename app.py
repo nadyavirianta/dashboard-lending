@@ -12,8 +12,9 @@ import os
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
 data = pd.read_csv('data/LuxuryLoanPortfolio.csv')
-server = app.server
+
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
+server = app.server
 port = int(os.environ.get("PORT", 5000))
 
 data['records'] = 1
