@@ -12,7 +12,7 @@ import os
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
 data = pd.read_csv('data/LuxuryLoanPortfolio.csv')
-
+server = app.server
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 port = int(os.environ.get("PORT", 5000))
 
@@ -102,5 +102,5 @@ def update_line_chart(purposes):
     
 		
 if __name__ == "__main__":
-    app.run(debug=False,host="0.0.0.0",
+    app.run_server(debug=False,host="0.0.0.0",
                    port=port)
